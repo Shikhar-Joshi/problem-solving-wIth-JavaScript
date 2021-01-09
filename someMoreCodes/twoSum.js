@@ -13,6 +13,7 @@ const twoSum = (arr, k) =>{
             remElem.push(k-num);
         }
     }
+
 };
 
 let arr = [2,11,15,7, -1];
