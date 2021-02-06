@@ -1,14 +1,19 @@
 function sumSubArray(arr) {
-	let updated_sum = 0;
-	const result = arr.reduce((acc, value) =>{
+	let max_sum = Math.max(...arr);
+
+	if(max_sum < 0) {
+		return max_sum;
+	}
+	max_sum = 0;
+	const _ = arr.reduce((acc, value) =>{
 		acc = acc + value > 0? acc + value :0;
-		updated_sum = Math.max(acc, updated_sum);
+		max_sum = Math.max(acc, max_sum);
 		return acc;
 	}, 0);
-	console.log(updated_sum);
+	return max_sum;
 }
 
 
-const arr = [-2, -3, 4, -1, -2, 1, 5, -3];
-sumSubArray(arr);
+const arr = [-8, -3, -6, -2, -5, -4];
+console.log(sumSubArray(arr));
  
