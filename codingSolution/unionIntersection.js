@@ -1,18 +1,40 @@
 // Question Link: https://practice.geeksforgeeks.org/problems/union-of-two-arrays/0
 
-const lodash = require("lodash");
-
 function unionHandler(arr1, arr2) {
-    let union = [...arr1, ...arr2];
-    return union;
-}
-function intersectionHandler(arr1, arr2) {
-    let intersectArrray = lodash.intersection(arr1, arr2);
-    return intersectArrray;
+    let union = {};
+    for (let i = arr1.length - 1; i >= 0; --i)
+        union[arr1[i]] = arr1[i];
+    for (let i = arr2.length - 1; i >= 0; --i)
+        union[arr2[i]] = arr2[i];
+    let res = []
+    for (let k in union) {
+        res.push(union[k]);
+    }
+    return res;
 }
 
-let arr1 = [10,2,45,5];
-let arr2 = [1,2,5,6,7];
+function intersectionHandler(arr1, arr2) {
+    let arr1Index = 0,
+        arr2Index = 0;
+    let result = [];
+
+    while (arr1Index < arr1.length && arr2Index < arr2.length) {
+        if (arr1[arr1Index] < arr2[arr2Index]) {
+            arr1Index++;
+        } else if (arr1[arr1Index] > arr2[arr2Index]) {
+            arr2Index++;
+        } else {
+            result.push(arr1[arr1Index]);
+            arr1Index++;
+            arr2Index++;
+        }
+    }
+
+    return result;
+}
+
+let arr1 = [2, 5, 10, 45];
+let arr2 = [1, 2, 3, 5, 6, 7];
 
 console.log(intersectionHandler(arr1, arr2));
 console.log(unionHandler(arr1, arr2));
