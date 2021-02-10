@@ -1,6 +1,10 @@
 // Question Link: https://www.geeksforgeeks.org/maximum-and-minimum-in-an-array/
-let arr = [ 45, 23, 85, 74, 36, 95, 100];
-let len = arr.length - 1;
-// using array destructuring    
-let max, min = [Math.max(...arr), Math.min(...arr)];
-console.log(max, min)
+
+const minMax = (arr) => {
+    arr.sort((a, b) => a - b);
+    return [arr[0], arr[arr.length - 1]];
+};
+
+let arr = [ 45, 23, 85, 74, 36, 95, 100];  
+let [min, max] = minMax(arr);
+console.log(min, max);
