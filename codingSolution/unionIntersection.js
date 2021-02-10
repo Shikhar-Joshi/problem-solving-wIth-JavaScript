@@ -1,7 +1,5 @@
 // Question Link: https://practice.geeksforgeeks.org/problems/union-of-two-arrays/0
 
-const lodash = require("lodash");
-
 function unionHandler(arr1, arr2) {
     let union = [...arr1, ...arr2];
     return union;
