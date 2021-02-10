@@ -1,6 +1,6 @@
 // Question Link: https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/
 const revHandler = arr =>{
-    var rev = new Array;
+    var rev = [];
     for(let i=arr.length - 1;i >= 0; i--){
         rev.push(arr[i]);
     }
@@ -8,8 +8,6 @@ const revHandler = arr =>{
 }
 
 let arr1 = [6,4,2,9,8,3,10,45];
-let arr2 = revHandler(arr1);
+let result = revHandler(arr1);
 
-for(let i in arr2){
-    console.log(arr2[i]);
-}
+console.log(result);
