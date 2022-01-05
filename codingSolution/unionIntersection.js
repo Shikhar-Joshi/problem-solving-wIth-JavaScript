@@ -6,10 +6,7 @@ function unionHandler(arr1, arr2) {
         union[arr1[i]] = arr1[i];
     for (let i = arr2.length - 1; i >= 0; --i)
         union[arr2[i]] = arr2[i];
-    let res = []
-    for (let k in union) {
-        res.push(union[k]);
-    }
+    let res = Object.keys(union).length;
     return res;
 }
 
@@ -30,7 +27,7 @@ function intersectionHandler(arr1, arr2) {
         }
     }
 
-    return result;
+    return result.length;
 }
 
 let arr1 = [2, 5, 10, 45];

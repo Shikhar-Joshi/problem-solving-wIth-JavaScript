@@ -4,8 +4,9 @@ const oneRotation = (arr) => {
     let first = arr.shift();
     //push method add that element at last.
 	arr.push(first);
-	console.log(arr);
+	return arr;
 };
 
 const arr = [3,4,5,6,7];
-oneRotation(arr);
+let res = oneRotation(arr);
+console.log(res);
